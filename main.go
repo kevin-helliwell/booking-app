@@ -13,7 +13,7 @@ func main() {
 	
 	fmt.Printf("Welcome to our %v booking application\n", conferenceName)
 	fmt.Printf("We have a total of %v tickets and %v are still available.\n", conferenceTickets, remainingTickets)
-	fmt.Println("Get your tickets here to attend")
+	fmt.Println("Get your tickets here to attend.")
 	
 	for {
 		var firstName string
@@ -34,7 +34,11 @@ func main() {
 		fmt.Println("Enter number of tickets: ")
 		fmt.Scan(&userTickets)
 		
-		if userTickets <= remainingTickets {
+		isValidName := len(firstName) >= 2 && len(lastName)>= 2
+		isValidEmail := strings.Contains(email,"@")
+		isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
+		
+		if isValidName && isValidEmail && isValidTicketNumber {
 			remainingTickets = remainingTickets - userTickets
 			
 			bookings = append(bookings, firstName + " " + lastName)
@@ -54,7 +58,15 @@ func main() {
 		fmt.Println("Our conference is sold out. Come back next year.")
 		break
 		} else {
-		fmt.Printf("We only have %v tickets remaining, so you can't book %v tickets\n", remainingTickets, userTickets)
+			if !isValidName {
+				fmt.Println("First name or last name you entered is too short.")
+			}
+			if !isValidEmail {
+				fmt.Println("Email address you entered does not contain @ sign.")
+			}
+			if !isValidTicketNumber {
+				fmt.Println("Number of tickets you entered is invalid.")
+			}
 	}	
 }
 }
