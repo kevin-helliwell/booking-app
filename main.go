@@ -6,15 +6,20 @@ import (
 )
 
 func main() {
+	// Sets up variables
 	conferenceName := "Go Conference"
 	const conferenceTickets int = 50
 	var remainingTickets uint = 50
 	var bookings = []string{}
 	
+	//  Greets user, gives them necessary info
 	fmt.Printf("Welcome to our %v booking application\n", conferenceName)
 	fmt.Printf("We have a total of %v tickets and %v are still available.\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend.")
 	
+	// Starts loop for getting tickets
+	// Ceases loop if all 50 tickets are booked
+	// Validates user input and number of tickets booked by user
 	for {
 		var firstName string
 		var lastName string
