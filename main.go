@@ -74,4 +74,20 @@ func main() {
 			}
 	}	
 }
+	// Switch statement example for handling/consolidating control flow through cases
+	// city := "London"
+	
+	// switch city {
+	// 	case "New York":
+	// 		// execute code for booking New York conference tickets
+	// 	case "Singapore", "Hong Kong":
+	// 		// execute code for booking Singapore & Hong Kong conference tickets
+	// 	case "London", "Berlin":
+	// 		// execute code for booking London & Berlin conference tickets
+	// 	case "Mexico City":
+	// 		// execute code for booking Mexico City conference tickets
+	// 	default:
+	// 		fmt.Print("No valid city selected.")
+	// }
+
 }
